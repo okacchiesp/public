@@ -1,255 +1,62 @@
 <!DOCTYPE html>
-<html lang="ja" dir="ltr">
+<html lang="ja">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>OKACCHI_LABO</title>
-    <link rel="stylesheet" type="text/css" href="dest/css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="dest/css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>断捨離st</title>
+    <link rel="stylesheet" type="text/css" href="reset.css" />
+    <link rel="stylesheet" type="text/css" href="app.css" />
     <link
-      href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700|Orbitron|Quicksand"
+      href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700|M+PLUS+Rounded+1c:300,400"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+    <script
+      src="https://kit.fontawesome.com/64908c6bf4.js"
       crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css"
-      type="text/css"
-      media="all"
-    />
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
-    <header class="header">
-      <div class="menu-resp js-menu-sp">
-        <span></span>
-        <span></span>
-        <span></span>
+    <div class="main">
+      <h1 class="title">断捨離st</h1>
+      <form class="form">
+        <div class="inputArea">
+          <input
+            type="text"
+            class="inputText js-get-val"
+            placeholder="断捨離する物は？"
+          />
+          <span class="inputError js-inputError">入力が空です！</span>
+        </div>
+        <div class="addTodo">
+          <button class="btn js-add-todo" disabled="disabled">登録</button>
+        </div>
+      </form>
+      <div class="search">
+        <div class="searchText">
+          <i class="fa fa-search search__icon"></i>
+          <input
+            type="text"
+            class="searchText__input js-search"
+            placeholder="検索する文字を入力する"
+          />
+        </div>
       </div>
-      <nav class="nav-menu js-menu-sp-target">
-        <ul class="menu">
-          <li class="menu-item">
-            <a href="#about" class="menu-link js-menu-link-sp">ABOUT</a>
-          </li>
-          <li class="menu-item">
-            <a href="#skill" class="menu-link js-menu-link-sp">SKILL</a>
-          </li>
-          <li class="menu-item">
-            <a href="#work" class="menu-link js-menu-link-sp">WORKS</a>
-          </li>
-          <li class="menu-item">
-            <a href="#contact" class="menu-link js-menu-link-sp">CONTACT</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <div class="main_img">
-        <h1 class="main_title">
-          OKACCHI<span class="main_title--us">_</span>LABO
-        </h1>
+      <div class="list">
+        <div class="sub-list">
+          <h2 class="sub-title">
+            リスト
+          </h2>
+          <p class="sub-text">クリックで編集・Shift+Enterで決定</p>
+          <ul class="js-todo_list"></ul>
+        </div>
       </div>
-
-      <!--自己紹介-->
-
-      <section class="content bg-color_white">
-        <div class="content_title">
-          <h2>ABOUT</h2>
-        </div>
-        <div id="about">
-          <div class="image">
-            <img src="images/prof_image.jpg" alt="" />
-          </div>
-          <table>
-            <tr>
-              <th>名前</th>
-              <td>おかっち</td>
-            </tr>
-            <tr>
-              <th>年齢</th>
-              <td>29歳</td>
-            </tr>
-            <tr>
-              <th>出身地</th>
-              <td>埼玉県</td>
-            </tr>
-            <tr>
-              <th>趣味</th>
-              <td>アカペラ／ファッション</td>
-            </tr>
-            <tr>
-              <th>特技</th>
-              <td>ボイスパーカッション</td>
-            </tr>
-          </table>
-
-          <ul>
-            <div class="icons">
-              <li>
-                <a href="https://twitter.com/OkacchiSub"
-                  ><i class="fab fa-twitter icon twi_icon"></i
-                ></a>
-              </li>
-              <li>
-                <a href="https://github.com/okacchiesp/portfolio"
-                  ><i class="fab fa-github icon git_icon"></i
-                ></a>
-              </li>
-            </div>
-          </ul>
-        </div>
-      </section>
-
-      <!--スキル-->
-
-      <section class="content">
-        <div class="content_title">
-          <h2>SKILL</h2>
-        </div>
-        <div id="skill">
-          <div class="skill-item">
-            <div class="html5 skill-item__panel">
-              <i class="fab fa-html5 faa-float animated-hover"></i>
-              <div class="skill-text">
-                <p>HTML5</p>
-              </div>
-            </div>
-            <div class="css3 skill-item__panel">
-              <i class="fab fa-css3-alt faa-float animated-hover"></i>
-              <div class="skill-text">
-                <p>CSS3</p>
-              </div>
-            </div>
-            <div class="php skill-item__panel">
-              <i class="fab fa-php faa-float animated-hover"></i>
-              <div class="sikill-text">
-                <p>PHP</p>
-              </div>
-            </div>
-            <div class="js skill-item__panel">
-              <i class="fab fa-js-square faa-float animated-hover"></i>
-              <div class="skill-text">
-                <p>JavaScript & jquery</p>
-              </div>
-            </div>
-            <div class="ms skill-item__panel">
-              <i class="fab fa-windows faa-float animated-hover"></i>
-              <div class="skill-text">
-                <p>Microsoft Office</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!--制作実績-->
-
-      <section class="content bg-color_white">
-        <div class="content_title">
-          <h2>WORKS</h2>
-        </div>
-        <div id="work">
-          <div class="portfolios">
-            <div class="portfolio">
-              <a href="" target="_blank">
-                <figure class="hover-parent">
-                  <img src="images/noimage.jpg" alt="" />
-                  <figcaption class="hover-mask">
-                    <p>【sample】</p>
-                    <p>samplesamplesample</p>
-                  </figcaption>
-                </figure>
-              </a>
-            </div>
-            <div class="portfolio">
-              <a href="" target="_blank">
-                <figure class="hover-parent">
-                  <img src="images/noimage.jpg" alt="" />
-                  <figcaption class="hover-mask">
-                    <p>【sample】</p>
-                    <p>samplesamplesample</p>
-                  </figcaption>
-                </figure>
-              </a>
-            </div>
-            <div class="portfolio">
-              <a href="" target="_blank">
-                <figure class="hover-parent">
-                  <img src="images/noimage.jpg" alt="" />
-                  <figcaption class="hover-mask">
-                    <p>【sample】</p>
-                    <p>samplesamplesample</p>
-                  </figcaption>
-                </figure>
-              </a>
-            </div>
-            <div class="portfolio">
-              <a
-                href="https://github.com/okacchiesp/portfolio/tree/master/mosya/02"
-                target="_blank"
-              >
-                <figure class="hover-parent">
-                  <img src="images/mosya2.png" alt="模写２" />
-                  <figcaption class="hover-mask">
-                    <p>【模写】</p>
-                    <p>株式会社三陽商会 特設ページ</p>
-                  </figcaption>
-                </figure>
-              </a>
-            </div>
-            <div class="portfolio">
-              <a
-                href="https://github.com/okacchiesp/portfolio/tree/master/mosya/03"
-                target="_blank"
-              >
-                <figure class="hover-parent">
-                  <img src="images/mosya3.png" alt="模写３" />
-                  <figcaption class="hover-mask">
-                    <p>【模写】</p>
-                    <p>株式会社アイ・ティ・エス</p>
-                  </figcaption>
-                </figure>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!--問い合わせ-->
-
-      <section class="content">
-        <div class="content_title">
-          <h2>CONTACT</h2>
-        </div>
-        <div id="contact">
-          <form class="form" method="post">
-            <input type="text" name="name" placeholder="名前" value="" />
-            <input type="text" name="email" placeholder="E-mail" value="" />
-            <textarea
-              name="comment"
-              placeholder="内容"
-              class="count-text"
-            ></textarea>
-            <span class="counter">0</span>/100
-            <span class="msg"></span>
-            <div class="submit__rigth">
-              <input type="submit" value="送信" />
-            </div>
-          </form>
-        </div>
-      </section>
-    </main>
-    <footer class="footer">
-      <p>Copyright © okacchilabo. All Rights Reserved</p>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="js/jquery.fademover.js"></script>
-    <script src="js/main.js"></script>
+    </div>
+    <script src="app.js"></script>
   </body>
 </html>
